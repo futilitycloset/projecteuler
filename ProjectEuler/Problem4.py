@@ -4,10 +4,8 @@
 import math
 
 number = 998001
-endpoint = int(math.sqrt(number)) + 1
-lowdivisorlist = []
-highdivisorlist = []
 palindromelist = []
+possiblesolutionlist = []
 
 def palindrome(input):
     textnumber = str(input)
@@ -22,24 +20,29 @@ def palindrome(input):
                 if textnumber[2] == textnumber[length-3]:
                     palindromelist.append(input)
 
-while number > 1:
-    palindrome(number)
-    number = number - 1
-
 def factor(input):
     endpoint = int(math.sqrt(input)) + 1
     lowdivisorlist = []
     highdivisorlist = []
-
-    for i in range(2, endpoint):
+    for i in range(2, endpoint, 1):
         if input%i == 0:
             lowdivisorlist.append(i)
-                
     for i in lowdivisorlist:
-        highdivisorlist.append(number/i)
-
+        highdivisorlist.append(input/i)
     divisorlist = lowdivisorlist + highdivisorlist
     divisorlist.sort()
     return divisorlist
 
-print factor(number)
+while number > 1:
+    palindrome(number)
+    number = number - 1
+
+print palindromelist
+
+for i in palindromelist:
+    staytrue = True
+    factorlist = factor(i)
+    for i in factorlist:
+        if i < 100 or i > 999:
+            factorlist.remove(i)
+    print factorlist
