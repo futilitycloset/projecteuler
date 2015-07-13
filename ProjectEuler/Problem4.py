@@ -45,15 +45,18 @@ for i in palindromelist:
         possiblesolutionlist.append(i)
 
 possiblesolutionlist.sort()
-print possiblesolutionlist
 
 for i in possiblesolutionlist:
-    maybeafactor = True
+    maybeafactor = False
     newfactorlist = factor(i)
     for x in newfactorlist:
-        if x > 99:
+        if x > 99 and x < 1000:
             if i/x > 99 and i/x < 1000:
-                morepossiblesolutionlist.append(i)
+                maybeafactor = True
+    if maybeafactor == True:
+        morepossiblesolutionlist.append(i)
+
+print morepossiblesolutionlist[-1]
                 
         
     
