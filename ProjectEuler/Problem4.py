@@ -6,6 +6,7 @@ import math
 number = 998001
 palindromelist = []
 possiblesolutionlist = []
+morepossiblesolutionlist = []
 
 def palindrome(input):
     textnumber = str(input)
@@ -36,13 +37,23 @@ def factor(input):
 while number > 1:
     palindrome(number)
     number = number - 1
-
-print palindromelist
-
+    
 for i in palindromelist:
-    staytrue = True
     factorlist = factor(i)
-    for i in factorlist:
-        if i < 100 or i > 999:
-            factorlist.remove(i)
-    print factorlist
+    correctlengthlist = [x for x in factorlist if (99 < x < 1000)]
+    if len(correctlengthlist) >= 2:
+        possiblesolutionlist.append(i)
+
+possiblesolutionlist.sort()
+print possiblesolutionlist
+
+for i in possiblesolutionlist:
+    maybeafactor = True
+    newfactorlist = factor(i)
+    for x in newfactorlist:
+        if x > 99:
+            if i/x > 99 and i/x < 1000:
+                morepossiblesolutionlist.append(i)
+                
+        
+    
