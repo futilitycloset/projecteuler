@@ -7,9 +7,27 @@ number = 998001
 endpoint = int(math.sqrt(number)) + 1
 lowdivisorlist = []
 highdivisorlist = []
+palindromelist = []
+
+def palindrome(input):
+    textnumber = str(input)
+    length = len(textnumber)  
+    if length == 5:
+        if textnumber[0] == textnumber[length-1]:
+            if textnumber[1] == textnumber[length-2]:
+                palindromelist.append(input)
+    if length == 6:
+        if textnumber[0] == textnumber[length-1]:
+            if textnumber[1] == textnumber[length-2]:
+                if textnumber[2] == textnumber[length-3]:
+                    palindromelist.append(input)
+
+while number > 1:
+    palindrome(number)
+    number = number - 1
 
 def factor(input):
-    endpoint = int(math.sqrt(number)) + 1
+    endpoint = int(math.sqrt(input)) + 1
     lowdivisorlist = []
     highdivisorlist = []
 
@@ -22,6 +40,6 @@ def factor(input):
 
     divisorlist = lowdivisorlist + highdivisorlist
     divisorlist.sort()
-    print divisorlist
+    return divisorlist
 
-factor(number)
+print factor(number)
