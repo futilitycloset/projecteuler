@@ -16,10 +16,10 @@ def specificfactor(startpoint):
                     startpoint = startpoint + 1
                     break
     if continueflag == True:
-        return startingpoint
+        return startpoint
 
 answer = specificfactor(2520)
-print answer[0]
+print answer
 
 """def factoruntilcertaindivisor(startpoint, highpoint, targetdivisor):
     endpoint = highpoint + 1
