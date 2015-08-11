@@ -3,10 +3,25 @@
 #What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
 import math
-highpoint = 100000000
-startpoint = 2520
 
-def factoruntilcertaindivisor(startpoint, highpoint, targetdivisor):
+def specificfactor(startpoint):
+    relevantdivisors = [11,12,13,14,15,16,17,18,19,20]
+    continueflag = False
+    while continueflag == False:
+        for i in relevantdivisors:
+            continueflag = True
+            if startpoint%i != 0:
+                continueflag = False
+                if continueflag == False:
+                    startpoint = startpoint + 1
+                    break
+    if continueflag == True:
+        return startingpoint
+
+answer = specificfactor(2520)
+print answer[0]
+
+"""def factoruntilcertaindivisor(startpoint, highpoint, targetdivisor):
     endpoint = highpoint + 1
     divisorlist = []
     for i in range(startpoint, endpoint):
@@ -38,4 +53,4 @@ comparesharedand18 = commonbetweenlists(comparesharedand17, divisibleby18)
 comparesharedand19 = commonbetweenlists(comparesharedand18, divisibleby19)
 comparesharedand20 = commonbetweenlists(comparesharedand19, divisibleby20)
 
-print comparesharedand20[0]
+print comparesharedand20[0]"""
