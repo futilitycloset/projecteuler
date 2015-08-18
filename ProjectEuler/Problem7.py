@@ -5,7 +5,8 @@
 import math
 
 finished = False
-number = 3
+number = 18
+primelist = [2, 3, 5, 7, 11, 13, 17]
 
 def factor(input):
     endpoint = int(math.sqrt(input)) + 1
@@ -26,14 +27,12 @@ def factor(input):
     
 while finished == False:
     divisorlist = factor(number)
-    for i in divisorlist:
-        newdivisorlist = factor(i)
-        if len(newdivisorlist) == 0:
-            primedivisorlist.append(i)
-            if len(primedivisorlist) == 10001:
-                finished = True
-            else:
-                number = number + 1
+    if len(divisorlist) == 0:
+        primelist.append(number)
+    if len(primelist) == 10001:
+        finished = True
+    else:
+        number = number + 1
 
 print number
     
