@@ -33,14 +33,14 @@ count = 0
 bestproduct = 0
 
 while last < 1000:
-    productset = []
+    productlist = []
     product = 1
     fakefirst = first
     fakelast = last
     while fakefirst < fakelast + 1:
-        productset.append(awesomenumber[fakefirst])
+        productlist.append(awesomenumber[fakefirst])
         fakefirst += 1
-    for i in productset:
+    for i in productlist:
         product *= int(i)
     if product > bestproduct:
         bestproduct = product
