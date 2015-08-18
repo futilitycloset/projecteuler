@@ -4,7 +4,8 @@
 
 import math
 
-primecount = 0
+finished = False
+number = 3
 
 def factor(input):
     endpoint = int(math.sqrt(input)) + 1
@@ -23,12 +24,16 @@ def factor(input):
     divisorlist.sort()
     return divisorlist
     
-divisorlist = factor(number)
-print divisorlist
-for i in divisorlist:
-    newdivisorlist = factor(i)
-    if len(newdivisorlist) == 0:
-        primedivisorlist.append(i)
-        
-while primecount < 10002:
+while finished == False:
+    divisorlist = factor(number)
+    for i in divisorlist:
+        newdivisorlist = factor(i)
+        if len(newdivisorlist) == 0:
+            primedivisorlist.append(i)
+            if len(primedivisorlist) == 10001:
+                finished = True
+            else:
+                number = number + 1
+
+print number
     
