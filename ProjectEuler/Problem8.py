@@ -44,8 +44,8 @@ while last < 1000:
         product *= int(i)
     if product > bestproduct:
         bestproduct = product
-    first = first + 1
-    last = last + 1
+    first += 1
+    last += 1
     
 print bestproduct
     
