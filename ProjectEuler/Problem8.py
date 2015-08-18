@@ -38,12 +38,10 @@ while last < 1000:
     fakefirst = first
     fakelast = last
     while fakefirst < fakelast + 1:
-        newnumber = awesomenumber[fakefirst]
-        productset.append(newnumber)
+        productset.append(awesomenumber[fakefirst])
         fakefirst = fakefirst + 1
     for i in productset:
-        newi = int(i)
-        product *= newi
+        product *= int(i)
     if product > bestproduct:
         bestproduct = product
     first = first + 1
