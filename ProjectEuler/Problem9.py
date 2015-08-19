@@ -7,6 +7,19 @@
 #Find the product abc.
 
 import math
+
+perfectsquarelist = []
+number = 1
+
+while number < math.sqrt(1000):
+	perfectsquarelist.append(number**2)
+	number += 1
+
+
+
+
+
+
 """a = 3
 b = 4
 finished = False
