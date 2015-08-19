@@ -6,19 +6,56 @@
 #There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 #Find the product abc.
 
-import math
-
 perfectsquarelist = []
+Asquarelist = []
+Bsquarelist = []
+triplelist = []
 number = 1
 
-while number < math.sqrt(1000):
+while number < 1000:
 	perfectsquarelist.append(number**2)
 	number += 1
 
+number = 1
 
+while number < 333:
+	Asquarelist.append(number**2)
+	number += 1
 
+number = 1
 
+while number < 500:
+	Bsquarelist.append(number**2)
+	number += 1
 
+for a in Asquarelist:
+	for b in Bsquarelist:
+		if b>a:
+			c = b+a
+			if c in perfectsquarelist:
+				if a**.5 + b**.5 + c**.5 == 1000:
+					a = a**.5
+					b = b**.5
+					c = c**.5
+					print "a= " + str(a)
+					print "b= " + str(b)
+					print "c= " + str(c)
+					print "product is " + str(a*b*c)
+
+"""for a in perfectsquarelist:
+	for b in perfectsquarelist:
+		c = a+b
+		if c in perfectsquarelist:
+			triplelist.append(tuple([a,b,c]))"""
+
+"""for i in perfectsquarelist:
+	currentfirst = i
+	firstsum = 0
+	secondsum = 0
+	for i in perfectsquarelist:
+		if i != currentfirst:
+			firstsum = currentfirst + 1
+				for i in perfectsquarelist:"""
 
 """a = 3
 b = 4
