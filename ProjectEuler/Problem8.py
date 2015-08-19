@@ -29,7 +29,6 @@ awesomenumber = "731671765313306249192251196744265747423553491949349698352031277
 
 first = 0
 last = 12
-count = 0
 bestproduct = 0
 
 while last < 1000:
