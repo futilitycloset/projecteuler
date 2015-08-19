@@ -9,14 +9,14 @@ lowdivisorlist = []
 highdivisorlist = []
 primedivisorlist = []
 
-def factor(input):
-    endpoint = int(math.sqrt(input)) + 1
+def factor(number):
+    endpoint = int(math.sqrt(number)) + 1
     lowdivisorlist = []
     highdivisorlist = []
     divisorlist = []
 
     for i in range(2, endpoint):
-        if input%i == 0:
+        if number%i == 0:
             lowdivisorlist.append(i)
                 
     for i in lowdivisorlist:

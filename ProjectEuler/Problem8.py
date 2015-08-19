@@ -39,12 +39,11 @@ while last < 1000:
     while fakefirst < fakelast + 1:
         productlist.append(awesomenumber[fakefirst])
         fakefirst += 1
-    for i in productlist:
-        product *= int(i)
+    for x in productlist:
+        product *= int(x)
     if product > bestproduct:
         bestproduct = product
     first += 1
     last += 1
     
 print bestproduct
-    
