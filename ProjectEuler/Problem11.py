@@ -79,7 +79,26 @@ while rowcount < 20:
 	rowcount += 1
 
 columncount = 0
+newrowcount = 0
 columnfirst = 0
 columnlast = 3
 
+while columncount < 20:
+	columnlist = []
+	while newrowcount < 20:
+		columnlist.append(grid[newrowcount][columncount])
+		newrowcount += 1
+	columnfakefirst = columnfirst
+	columnfakelast = columnlast
+	columnproductlist = []
+	columnproduct = 1
+	while columnfakefirst < columnfakelast + 1:	
+		columnproductlist.append(columnlist[columnfakefirst])
+		for x in columnproductlist:
+			columnproduct *= int(x)
+		if columnproduct > bestproduct:
+			bestproduct = columnproduct
+		columnfirst += 1
+		columnlast += 1
+	columncount += 1
 
