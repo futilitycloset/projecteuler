@@ -55,4 +55,31 @@ grid = []
 for row in numbers:
 	grid.append(row.split(" "))
 
-print grid
+bestproduct = 1
+rowcount = 0
+rowfirst = 0
+rowlast = 3
+
+while rowcount < 20:
+	for i in grid[rowcount]:
+		while rowlast < 20:
+			rowproduct = 1
+			rowproductlist = []
+			rowfakefirst = rowfirst
+			rowfakelast = rowlast
+			while rowfakefirst < rowfakelast + 1:
+				rowproductlist.append(grid[rowcount][rowfakefirst])
+				rowfakefirst += 1
+			for x in rowproductlist:
+				rowproduct *= int(x)
+			if rowproduct > bestproduct:
+				bestproduct = rowproduct
+			rowfirst += 1
+			rowlast += 1
+	rowcount += 1
+
+columncount = 0
+columnfirst = 0
+columnlast = 3
+
+
