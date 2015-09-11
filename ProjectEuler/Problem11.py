@@ -104,5 +104,18 @@ while columncount < 20:
 		columnlast += 1
 	columncount += 1
 
-print bestproduct
+leftlowerdiaglist = []
+relevantleftlowerdiagcount = 20
+startx = 0
+starty = 0
 
+while relevantleftlowerdiagcount > 3:
+	diagfirst = 0
+	diaglast = 3
+	diaglist = []
+	while startx < relevantleftlowerdiagcount:
+		diaglist.append(grid[startx][starty])
+		startx += 1
+		starty += 1
+
+	relevantleftlowerdiagcount -= 1
